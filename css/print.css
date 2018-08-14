@@ -1,0 +1,50 @@
+@media print{
+    table.table-bordered{
+        border: 1px solid black !important;
+    }
+    table.table-bordered > tbody >tr >td{
+        border: 1px solid #000 !important ;
+        border-width: 1px 0 0 1px !important;
+        padding: 5px !important;
+    }
+    table.table-bordered > tbody >tr >th{
+        border: 1px solid #000 !important ;
+        border-width: 1px 0 0 1px !important;
+        padding: 5px !important;
+    }
+    table.table-bordered > thead > tr > th{
+        border: 1px solid #000 !important;
+        border-width: 1px 0 0 1px !important;
+        padding: 5px ;
+    } 
+    body.modalprinter * {
+        visibility: hidden;
+    }
+    body.modalprinter .modal-dialog.focused{
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        top: 0; overflow: visible !important;
+    }
+    body.modalprinter .modal-dialog.focused 
+    .modal-content{
+        border-width: 0;
+    }
+    body.modalprinter .modal-dialog.focused
+    .modal-content .modal-header .modal-title, 
+    body.modalprinter .modal-dialog.focused,
+    .modal-content .modal-body * {
+        visibility: visible;
+    }
+    body.modalprinter .modal-dialog.focused
+    .modal-content .modal-header,
+    body.modalprinter .modal-dialog.focused
+    .modal-content .modal-body{
+        padding: 0;
+    }
+    body.modalprinter .modal-dialog.focused
+    .modal-content .modal-header .modal-title{
+        margin-bottom: 20px;
+    }
+}
