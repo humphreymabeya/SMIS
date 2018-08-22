@@ -25,7 +25,7 @@
 
     if(isset($_REQUEST['act']) && @$_REQUEST['act']=="1")
     {
-        $errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong>Examination score Submitted successfully</div>";
+        $errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Examination score Submitted successfully</div>";
     }
 
 ?>
@@ -242,7 +242,7 @@ include("../Include/header.php");
 		
 		        <div class="panel panel-primary">
                     <div class="panel-heading">
-                            Manage Fees Details  
+                            Manage Examination Details  
                     </div>
                         <div class="panel-body">
                             <div class="table-sorting table-responsive" id="subjectresult">

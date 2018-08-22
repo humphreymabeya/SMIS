@@ -110,7 +110,7 @@ include("Include/header.php");
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="../Reports/report.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -139,7 +139,7 @@ include("Include/header.php");
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="../Finance/fees.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -202,7 +202,7 @@ include("Include/header.php");
                         <div class="main-box mb-dull">
                             <a href="../Reports/report.php">
                                 <i class="fa fa-file-text fa-3x"></i>
-                                <h5>Report</h5>
+                                <h5>Reports</h5>
                             </a>
                         </div>
                     </div>
@@ -210,125 +210,29 @@ include("Include/header.php");
                 <!-- /. ROW  -->
                 <hr>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <i class="fa fa-bell fa-fw"></i> Notifications Panel
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small"><em>4 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small"><em>12 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small"><em>27 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-                                        <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-warning fa-fw"></i> Server Not Responding
-                                        <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-                                        <span class="pull-right text-muted small"><em>9:49 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-money fa-fw"></i> Payment Received
-                                        <span class="pull-right text-muted small"><em>Yesterday</em>
-                                        </span>
-                                    </a>
+                    <div class="col-md-12">
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border">Generate Lists:</legend>
+                            <form class="form-inline" role="form" id="searchform">
+                                <div class="form-group">
+                                    <label for="email"> Branch: </label>
+                                    <select  class="form-control" id="branch" name="branch" >
+                                        <option value="" >Select Branch</option>
+                                            <?php
+                                                $sql = "select * from branch where delete_status='0' order by branch.branch asc";
+                                                $q = $conn->query($sql);
+                                                
+                                                while($r = $q->fetch_assoc())
+                                                {
+                                                echo '<option value="'.$r['id'].'"  '.(($branch==$r['id'])?'selected="selected"':'').'>'.$r['branch'].'</option>';
+                                                }
+                                            ?>
+                                    </select>
                                 </div>
-                                <!-- /.list-group -->
-                                <a href="#" class="btn btn-default btn-block">View All Alerts</a>
-                            </div>
-                        </div>
+                            </form>
+                        </fieldset>
                     </div>
-                    <!-- panel two -->
-                    <div class="col-lg-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <i class="fa fa-bell fa-fw"></i> Notifications Panel
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small"><em>4 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small"><em>12 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small"><em>27 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-                                        <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-warning fa-fw"></i> Server Not Responding
-                                        <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-                                        <span class="pull-right text-muted small"><em>9:49 AM</em>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-money fa-fw"></i> Payment Received
-                                        <span class="pull-right text-muted small"><em>Yesterday</em>
-                                        </span>
-                                    </a>
-                                </div>
-                                <!-- /.list-group -->
-                                <a href="#" class="btn btn-default btn-block">View All Alerts</a>
-                            </div>
-                        </div>
-                    </div>
+                </div>
                 </div>
             <!-- /. PAGE INNER  -->
         </div>

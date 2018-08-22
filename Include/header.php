@@ -60,13 +60,13 @@
                         <a href="#"><i class="fa fa-cogs fa-fw"></i> Settings<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="../Session/changePassword.php"><i class="fa fa-key"></i>Change  Password</a>
+                                </li>
+                                <li>
                                     <a href="#"><i class="fa fa-user"></i>User Profile</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-history"></i>User logs</a>
-                                </li>
-                                <li>
-                                    <a href="../Session/changePassword.php"><i class="fa fa-key"></i>Change  Password</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

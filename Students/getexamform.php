@@ -278,7 +278,7 @@
         $res = $fq->fetch_assoc();
           echo '<tr>
             <th>P001</th>
-            <th>Introduction</th>
+            <th>Introduction To Computers</th>
             <td>'.$res['introduction'].'</td>
             <td><b>
               ';
@@ -373,7 +373,7 @@
 
           <tr>
             <th>P006</th>
-            <th>Presentations</th>
+            <th>Powerpoint Presentations</th>
             <td>'.$res['mspowerpoint'].'</td>
             <td> <b>
             ';
@@ -392,7 +392,7 @@
 
           <tr>
             <th>P007</th>
-            <th>DTP</th>
+            <th>Desktop Publishing</th>
             <td>'.$res['mspublishing'].'</td>
             <td> <b>
             ';
@@ -411,7 +411,7 @@
 
           <tr>
             <th>P008</th>
-            <th>Internet</th>
+            <th>Internet & Email</th>
             <td>'.$res['internet'].'</td>
             <td> <b>
             ';

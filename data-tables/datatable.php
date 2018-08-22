@@ -169,7 +169,7 @@
                     $aRow['branch'],
 					date("d M y", strtotime($aRow['joindate'])),
                     
-					html_entity_decode('<button class="btn btn-warning btn-xs" onclick="javascript:GetFeeForm('.$aRow['id'].')"><i class="fa fa-usd "></i>  Take Fee </button>')
+					html_entity_decode('<button class="btn btn-success btn-xs" onclick="javascript:GetFeeForm('.$aRow['id'].')"><i class="fa fa-usd "></i>  Take Fee </button>')
 										
                 );
 		
@@ -355,7 +355,7 @@ $aColumns = array( 's.id','s.sname','s.balance','s.fees','b.branch','s.contact',
                     $aRow['branch'],
 					date("d M y", strtotime($aRow['joindate'])),
                     
-					html_entity_decode('<button class="btn btn-warning btn-xs" onclick="javascript:GetFeeForm('.$aRow['id'].')"><i class="fa fa-usd "></i> Fee Details </button>'.''.'<button class="btn btn-success btn-xs" onclick="javascript:GetExamForm('.$aRow['id'].')"><i class="fa fa-graduation-cap "></i> Transcripts</button>')
+					html_entity_decode('<button class="btn btn-warning btn-xs" onclick="javascript:GetFeeForm('.$aRow['id'].')"><i class="fa fa-usd "></i> Fee Details </button>'.' '.'<button class="btn btn-success btn-xs" onclick="javascript:GetExamForm('.$aRow['id'].')"><i class="fa fa-graduation-cap "></i> Transcripts</button>')
                 );
 		
 		$output['aaData'][] =$row;

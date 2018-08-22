@@ -9,14 +9,10 @@
 		$newpassword = mysqli_real_escape_string($conn,$_POST['newpassword']);
 		$hashed_password = password_hash($_POST['oldpassword'], PASSWORD_DEFAULT);
 		$sql = "select * from users where username= '".$_SESSION['username']."' "; 
-		// and password='".$hashed_password."'
+		
 		$q = $conn->query($sql);
-		if(password_verify($oldpassword, $q->fetch_assoc()['password'])){
-		// if($q->num_rows>0)
+		if(password_verify($oldpassword, $q->fetch_assoc()['password'])){		
 			$fetch = $conn->query("update users set password = '".password_hash($newpassword, PASSWORD_DEFAULT)."' WHERE username = '".$_SESSION['username']."'");
-		// {
-			// $sql = "update users set password = '".password_hash($newpassword, PASSWORD_DEFAULT)."' WHERE username = '".$_SESSION['username']."'";
-			// $r = $conn->query($sql);
 			echo '<script type="text/javascript">window.location="changePassword.php?act=1"; </script>';
 		}else
 		{
