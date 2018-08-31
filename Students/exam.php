@@ -41,7 +41,7 @@
     <link href="../../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="../../css/font-awesome.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="../../css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="../../css/custom.css" rel="stylesheet" />

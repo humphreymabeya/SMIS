@@ -41,14 +41,14 @@
 			$conn->query("INSERT INTO exam(stdid,submitdate) VALUES ('$sid','$joindate')");	
 			echo '<script type="text/javascript">window.location="student.php?act=1";</script>';
 			
-			}else
-				if($_POST['action']=="update")
-				{
-					$id = mysqli_real_escape_string($conn,$_POST['id']);	
-					$sql = $conn->query("UPDATE  student  SET  branch  = '$branch', sname = '$sname', contact = '$contact', joindate = '$joindate', about = '$about', emailid = '$emailid'  WHERE  id  = '$id'");
-					echo '<script type="text/javascript">window.location="student.php?act=2";</script>';
-				}
-		}
+		}else
+			if($_POST['action']=="update")
+			{
+				$id = mysqli_real_escape_string($conn,$_POST['id']);	
+				$sql = $conn->query("UPDATE  student  SET  branch  = '$branch', sname = '$sname', contact = '$contact', joindate = '$joindate', about = '$about', emailid = '$emailid'  WHERE  id  = '$id'");
+				echo '<script type="text/javascript">window.location="student.php?act=2";</script>';
+			}
+	}
 
 
 
@@ -101,7 +101,7 @@
     <link href="../../css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="../../css/font-awesome.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="../../css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="../../css/custom.css" rel="stylesheet" />
@@ -424,7 +424,7 @@
                         <table class="table table-striped table-bordered table-hover" id="tSortable22">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>Student No</th>
                                     <th>Name/Contact</th>
                                     <th>DOJ</th>
                                     <th>Fees</th>
@@ -433,7 +433,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-									<?php
+								<?php
 									$sql = "select * from student where delete_status='0'";
 									$q = $conn->query($sql);
 									$i=1;
@@ -447,20 +447,16 @@
                                             <td>'.$r['fees'].'</td>
 											<td>'.$r['balance'].'</td>
 											<td>
-											
-											
-
-											<a href="student.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
-											
-											<a onclick="return confirm(\'Are you sure you want to delete this record\');" href="student.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></a> </td>
+												<a href="student.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+			
+												<a onclick="return confirm(\'Are you sure you want to delete this record\');" href="student.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></a> 
+											</td>
 											
                                         </tr>';
 										$i++;
 									}
-									?>
-									
-                                        
-                                        
+								?>
+									       
                             </tbody>
                         </table>
                     </div>
