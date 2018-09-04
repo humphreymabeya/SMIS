@@ -714,7 +714,7 @@ if($_GET['type']=="salarysearch")
                     $aRow['branch'],
 					date("d M y", strtotime($aRow['joindate'])),
                     
-					html_entity_decode('<button class="btn btn-info btn-xs" onclick="javascript:GetSalaryForm('.$aRow['id'].')"><i class="fa fa-euro "></i>  Process Salary </button>')
+					html_entity_decode('<button class="btn btn-success btn-xs" onclick="javascript:GetSalaryForm('.$aRow['id'].')"><i class="fa fa-euro "></i>  Process Salary </button>')
 										
                 );
 		
