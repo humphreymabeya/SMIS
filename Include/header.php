@@ -43,9 +43,21 @@
 					 <li>
                         <a href="../Students/student.php"><i class="fa fa-users "></i>Students</a>
                     </li>
-					<li>
+                    <li>
+                        <a href="#"><i class="fa fa-money fa-fw"></i> Finance<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../Finance/fees.php"><i class="fa fa-usd"></i>Students` Fee Payment</a>
+                                </li>
+                                <li>
+                                <a href="../Finance/salary.php"><i class="fa fa-euro"></i>Staff Salary Payment</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                    </li> 
+					<!-- <li>
                         <a href="../Finance/fees.php"><i class="fa fa-usd "></i>Fees</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="../Students/exam.php"><i class="fa fa-file-excel-o"></i>Examinations</a>
                     </li>

@@ -235,7 +235,7 @@
                     });
 
                     function GetFeeForm(sid)
-                        {
+                    {
                         $.ajax({
                             type: 'post',
                             url: 'getfeeform.php',
@@ -244,8 +244,8 @@
                                 $('#formcontent').html(data);
                                 $("#myModal").modal({backdrop: "static"});
                             }
-                            });
-                        }
+                        });
+                    }
 
                 </script>
 
@@ -260,10 +260,10 @@
                     <div class="panel-heading">
                             Manage Fees Details  
                     </div>
-                        <div class="panel-body">
-                            <div class="table-sorting table-responsive" id="subjectresult">
-                                <table class="table table-striped table-bordered table-hover" id="tSortable22">
-                                    <thead>
+                    <div class="panel-body">
+                        <div class="table-sorting table-responsive" id="subjectresult">
+                            <table class="table table-striped table-bordered table-hover" id="tSortable22">
+                                <thead>
                                         <tr>
                                           
                                             <th>Name/Contact</th>                                            
@@ -273,13 +273,13 @@
 											<th>DOJ</th>
 											<th>Action</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-								    </tbody>
-                                </table>
-                            </div>
+                                </thead>
+                                <tbody>
+							    </tbody>
+                            </table>
                         </div>
                     </div>
+                </div>
 	                <!-------->
 	                <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
@@ -297,7 +297,7 @@
                             </div>
                         </div>
                     </div>	          
-            </div>
+                </div>
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->

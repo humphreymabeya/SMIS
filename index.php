@@ -14,9 +14,9 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="css/font-awesome.css" rel="stylesheet" />
-        <!-- CUSTOM PANEL STYLES -->
+    <!-- CUSTOM PANEL STYLES -->
     <link href="css/panel.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="css/custom.css" rel="stylesheet" />
@@ -49,7 +49,7 @@ include("Include/header.php");
                                     <div class="col-xs-9 text-right">
                                         <?php
                                             $conn->query($sql);
-                                            $sql = "SELECT count(id) as total FROM student";
+                                            $sql = "SELECT count(id) as total FROM student where delete_status='0'";
                                             $studentcount = $conn->query($sql);
                                             $tpr = $studentcount->fetch_assoc();
                                             $totalstudents = $tpr['total'];
@@ -76,7 +76,14 @@ include("Include/header.php");
                                         <i class="fa fa-user fa-3x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge"><h5 style="color: white; font-size: 20px"> 4 </h5><hr></div>
+                                        <?php
+                                            $conn->query($sql);
+                                            $sql = "SELECT count(id) as total FROM staff where delete_status='0'";
+                                            $staffcount = $conn->query($sql);
+                                            $tpr = $staffcount->fetch_assoc();
+                                            $totalstaff = $tpr['total'];
+                                        ?>
+                                        <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $totalstaff ;?> </h5><hr></div>
                                         <div>Total Number of Staff</div>
                                     </div>
                                 </div>
@@ -218,15 +225,7 @@ include("Include/header.php");
                                     <label for="email"> Branch: </label>
                                     <select  class="form-control" id="branch" name="branch" >
                                         <option value="" >Select Branch</option>
-                                            <?php
-                                                $sql = "select * from branch where delete_status='0' order by branch.branch asc";
-                                                $q = $conn->query($sql);
-                                                
-                                                while($r = $q->fetch_assoc())
-                                                {
-                                                echo '<option value="'.$r['id'].'"  '.(($branch==$r['id'])?'selected="selected"':'').'>'.$r['branch'].'</option>';
-                                                }
-                                            ?>
+                                           
                                     </select>
                                 </div>
                             </form>

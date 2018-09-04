@@ -29,9 +29,9 @@
 		{
 			$remark = mysqli_real_escape_string($conn,$_POST['remark']);
 			$salary = mysqli_real_escape_string($conn,$_POST['salary']);
-			$q1 = $conn->query("INSERT INTO staff (iname,joindate,contact,idno,about,emailid,branch,balance,salary,remark) VALUES ('$iname','$joindate','$contact','$idno','$about','$emailid','$branch','$balance','$salary','$remark')") ;
-			
-			$sid = $conn->insert_id;	
+			$q1 = $conn->query("INSERT INTO staff (iname,joindate,contact,idno,about,emailid,branch,salary,remark) VALUES ('$iname','$joindate','$contact','$idno','$about','$emailid','$branch','$salary','$remark')") ;
+			// $q1 = $conn->query("INSERT INTO staff (iname,joindate,salary) values ('$iname', '$joindate', '$salary')");
+			// $sid = $conn->insert_id;	
 			echo '<script type="text/javascript">window.location="staff.php?act=1";</script>';
 			
 		}else
@@ -109,7 +109,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Instructor / Staff Details 
+                        <h1 class="page-head-line">Staff Details 
 							<?php
 								echo (isset($_GET['action']) && @$_GET['action']=="add" || @$_GET['action']=="edit")?
 								' <a href="staff.php" class="btn btn-primary btn-sm pull-right">Back <i class="glyphicon glyphicon-arrow-right"></i></a>':'<a href="staff.php?action=add" class="btn btn-primary btn-sm pull-right"><i class="glyphicon glyphicon-plus"></i> Add </a>';
@@ -394,7 +394,6 @@
 												<td>Active</td>
 												<td>
 													<a href="staff.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
-													<a href="#" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-usd"></span>Pay Salary</a>
 													<a onclick="return confirm(\'Are you sure you want to delete this record\');" href="staff.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></a> 
 												</td>
 										</tr>';
@@ -404,21 +403,7 @@
                             </tbody>
                         </table>
                     </div>
-					<div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header text-center">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title w-100">Process Salary</h4>
-                                </div>
-                                <div class="modal-body" id="formcontent">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>	
+					
                 </div>
             </div>
             <script src="../../js/dataTable/jquery.dataTables.min.js"></script>
