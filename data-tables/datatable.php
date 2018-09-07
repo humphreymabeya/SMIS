@@ -47,31 +47,31 @@
 	$condArr = array();
 	if(isset($_GET['student']) && $_GET['student']!="")
 	{
-	$condArr[] = "s.sname like '%".mysqli_real_escape_string($conn,$_GET['student'])."%'";
+		$condArr[] = "s.sname like '%".mysqli_real_escape_string($conn,$_GET['student'])."%'";
 	
 	}
 	
 	if(isset($_GET['branch']) && $_GET['branch']!="")
 	{
-	$condArr[] = "b.id = '".mysqli_real_escape_string($conn,$_GET['branch'])."'";
+		$condArr[] = "b.id = '".mysqli_real_escape_string($conn,$_GET['branch'])."'";
 	
 	}
 	
 	
 	if(isset($_GET['doj']) && $_GET['doj']!="")
 	{
-	$Adate= explode(' ',$_GET['doj']);
-    $month = $Adate[0];
-    $year = $Adate[1];
-	$months = array('January'=>'01','February'=>'02','March'=>'03','April'=>'04','May'=>'05','June'=>'06','July'=>'07','August'=>'08','September'=>'09','October'=>'10','November'=>'11','December'=>'12');
-	
-	$doj = $months[$month].'-'.$year;	
-	$condArr[] = " DATE_FORMAT(s.joindate, '%m-%Y') = '".$doj."'";
+		$Adate= explode(' ',$_GET['doj']);
+		$month = $Adate[0];
+		$year = $Adate[1];
+		$months = array('January'=>'01','February'=>'02','March'=>'03','April'=>'04','May'=>'05','June'=>'06','July'=>'07','August'=>'08','September'=>'09','October'=>'10','November'=>'11','December'=>'12');
+		
+		$doj = $months[$month].'-'.$year;	
+		$condArr[] = " DATE_FORMAT(s.joindate, '%m-%Y') = '".$doj."'";
 	
 	}
 	if(count($condArr)>0)
 	{
-	$cond = " and ( ".implode(" and ",$condArr)." )";
+		$cond = " and ( ".implode(" and ",$condArr)." )";
 	}
 	 
 	$mycount = count($aColumns);
@@ -590,7 +590,7 @@ if($_GET['type']=="salarysearch")
 	
 	$cond = "";
 	$condArr = array();
-	if(isset($_GET['student']) && $_GET['student']!="")
+	if(isset($_GET['staff']) && $_GET['staff']!="")
 	{
 	$condArr[] = "s.iname like '%".mysqli_real_escape_string($conn,$_GET['staff'])."%'";
 	

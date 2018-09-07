@@ -6,24 +6,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMIS | Welcome | Karibu</title>
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-    <!-- BOOTSTRAP STYLES-->
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLES-->
-    <link href="css/font-awesome.css" rel="stylesheet" />
+    <?php include("Include/links.php"); ?>
     <!-- CUSTOM PANEL STYLES -->
     <link href="css/panel.css" rel="stylesheet" />
-    <!--CUSTOM BASIC STYLES-->
-    <link href="css/basic.css" rel="stylesheet" />
-    <!--CUSTOM MAIN STYLES-->
-    <link href="css/custom.css" rel="stylesheet" />
-    <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css' />
-
-
 </head>
 <?php
 include("Include/header.php");
@@ -49,7 +35,7 @@ include("Include/header.php");
                                     <div class="col-xs-9 text-right">
                                         <?php
                                             $conn->query($sql);
-                                            $sql = "SELECT count(id) as total FROM student where delete_status='0'";
+                                            $sql = "SELECT count(*) as total FROM student where delete_status='0'";
                                             $studentcount = $conn->query($sql);
                                             $tpr = $studentcount->fetch_assoc();
                                             $totalstudents = $tpr['total'];
@@ -88,7 +74,7 @@ include("Include/header.php");
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="../Staff/staff.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

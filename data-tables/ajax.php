@@ -21,7 +21,7 @@
 	}
 
 	if($_GET['type'] == 'staffname'){
-		$result = $conn->query("SELECT iname,contact FROM staff where (iname LIKE '%".$_GET['name_startsWith']."%' or contact LIKE '%".$_GET['name_startsWith']."%')   ");	
+		$result = $conn->query("SELECT iname,contact FROM staff where salary>0 and (iname LIKE '%".$_GET['name_startsWith']."%' or contact LIKE '%".$_GET['name_startsWith']."%')   ");	
 		$data = array();
 		while ($row = $result->fetch_assoc()) {
 			//array_push($data, $row['sname'].'-'.$row['contact']);	
