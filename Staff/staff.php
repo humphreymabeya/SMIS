@@ -375,7 +375,7 @@
 												<td>'.$r['iname'].'<br/>'.$r['contact'].'</td>
 												<td>'.$r['idno'].'</td>
 												<td>'.date("d M y", strtotime($r['joindate'])).'</td>
-												<td>Active</td>
+												<td><label class="label label-success">Active</label></td>
 												<td>
 													<a href="staff.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
 													<a onclick="return confirm(\'Are you sure you want to delete this record\');" href="staff.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></a> 
