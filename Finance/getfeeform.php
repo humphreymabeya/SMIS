@@ -161,6 +161,8 @@
             <td>'.$sr['sname'].'</td>
           <th>Branch</th>
             <td>'.$sr['branch'].'</td>
+          <th>Student Number</th>
+            <td>'.$sr['id'].'</td>
         </tr>
         <tr>
           <th>Contact</th>

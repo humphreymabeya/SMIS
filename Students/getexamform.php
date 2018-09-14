@@ -147,27 +147,35 @@
 					},
 					introduction: {
             digits: true,
+            required: true,
           },
           os :{
             digits: true,
+            required: true,
           },
           msword :{
             digits: true,
+            required: true,
           },
           msexcel :{
             digits: true,
+            required: true,
           },
           msaccess :{
             digits: true,
+            required: true,
           },
           mspowerpoint :{
             digits: true,
+            required: true,
           },
           mspublishing :{
             digits: true,
+            required: true,
           },
           internet :{
             digits: true,
+            required: true,
           },
 				},
 				errorElement: "em",
@@ -244,6 +252,8 @@
                 <td>'.$sr['sname'].'</td>
               <th>Branch</th>
                 <td>'.$sr['branch'].'</td>
+              <th>Student Number</th>
+                <td>'.$sr['id'].'</td>
             </tr>
             <tr>
               <th>Contact</th>

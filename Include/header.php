@@ -55,17 +55,23 @@
                             </ul>
                             <!-- /.nav-second-level -->
                     </li> 
-					<!-- <li>
-                        <a href="../Finance/fees.php"><i class="fa fa-usd "></i>Fees</a>
-                    </li> -->
+					
                     <li>
                         <a href="../Students/exam.php"><i class="fa fa-file-excel-o"></i>Examinations</a>
                     </li>
                     <li>
                         <a href="../Staff/staff.php"><i class="fa fa-user"></i>Instructors</a>
                     </li>
-					 <li>
-                        <a href="../Reports/report.php"><i class="fa fa-file-text "></i>Reports</a>
+					
+                    <li>
+                        <a href="#"><i class="fa fa-file-pdf-o"></i>Reports <span class="fa arrow"></span></a>
+                        <!-- second level -->
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../Reports/report.php"><i class="fa fa-file-word-o"></i>Students</a>
+                            </li>
+                            
+                        </ul>
                     </li>
 					
 					<li>

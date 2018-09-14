@@ -3,12 +3,37 @@
     include("../Include/checklogin.php");
     $errormsg = '';
     $branch = '';
+    if(isset($_POST['save'])){
+        $salary_paid = mysqli_real_escape_string($conn, $_POST['salary_paid']);
+        $year_of_pay = mysqli_real_escape_string($conn, $_POST['year']);
+        $month_of_pay = mysqli_real_escape_string($conn, $_POST['month']);
+        $transaction_remark = mysqli_real_escape_string($conn, $_POST['transaction_remark']);
+        $submitdate = mysqli_real_escape_string($conn,$_POST['submitdate']);
+        $sid = mysqli_real_escape_string($conn,$_POST['sid']);
+        $sql = "SELECT salary from staff WHERE id = '$sid'";
+        $sq = $conn->query($sql);
+        $sr = $sq->fetch_assoc();
+        $totalsalry = $sr['salary'];
+        if($sr['salary']>0){
+            // insert into database
+            $sql = "INSERT INTO salary_payment (staffid, salary_paid, pay_month, pay_year, submitdate, transaction_remark) VALUES ('$sid', '$salary_paid', '$month_of_pay', '$year_of_pay', '$submitdate', '$transaction_remark')";
+            $conn->query($sql);
+            echo '<script type="text/javascript">window.location="salary.php?act=pay";</script>';
+        }
+        
+    }
+    // execute act 1
+    if(isset($_REQUEST['act']) && @$_REQUEST['act'] == "pay"){
+        $errormsg = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Salary Payment transacted successfully</div>";
+    }
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Process Salaries | SMIS</title>
     <?php include("../Include/links.php"); ?>
+    <link href="../../css/print.css" rel="stylesheet" />   	
+    <script src="../../js/print.js"></script>
 </head>
 <?php
     include("../Include/header.php");//navbar interface
@@ -30,17 +55,17 @@
                             <legend  class="scheduler-border">Search:</legend>
                             <form class="form-inline" role="form" id="searchform">
                                 <div class="form-group">
-                                    <label for="email">Name</label>
+                                    <label for="email">Name:</label>
                                     <input type="text" class="form-control" id="staff" name="staff">
                                 </div>
   
                                 <div class="form-group">
-                                    <label for="email"> Date Of Joining </label>
+                                    <label for="email"> D.O.J: </label>
                                     <input type="text" class="form-control" id="doj" name="doj" >
                                 </div>
   
                                 <div class="form-group">
-                                    <label for="email"> Branch </label>
+                                    <label for="email"> Branch: </label>
                                     <select  class="form-control" id="branch" name="branch" >
                                         <option value="" >Select Branch</option>
                                         <?php
@@ -191,6 +216,19 @@
                         });
                     }
 
+                    function GetSalarySummary(sid)
+                    {
+                        $.ajax({
+                            type: 'post',
+                            url: '../Finance/getsalform.php',
+                            data: {staff:sid,req:'2'},
+                            success: function (data) {
+                                $('#formcontent1').html(data);
+                                $("#myModal1").modal({backdrop: "static"});
+                            }     
+                        });     
+                }
+
             </script>
 
             <style>
@@ -202,7 +240,7 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                            Manage Fees Details  
+                            Manage Salary Details  
                 </div>
                 <div class="panel-body">
                     <div class="table-sorting table-responsive" id="subjectresult">
@@ -240,8 +278,27 @@
                         </div>
                     </div>
                 </div>
-            </div>	          
+            </div>
+                
+            <div class="modal fade modalprinter printable" id="myModal1" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="col-12 modal-title text-center">Employee Salary Slip Summary</h4>
+                        </div>
+                        <div class="modal-body" id="formcontent1">
+                        
+                        </div>
+                        <div class="modal-footer">
+                            <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
+                            <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
+                        </div>
+                    </div>
                 </div>
+            </div>	
+            
+            </div>
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->

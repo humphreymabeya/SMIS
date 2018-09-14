@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Reports | SMIS</title>
+    <title>Students` Reports | SMIS</title>
     <?php include("../Include/links.php"); ?>
     <link href="../../css/print.css" rel="stylesheet" />   	
     <script src="../../js/print.js"></script>	
@@ -19,7 +19,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Reports</h1>
+                    <h1 class="page-head-line">Students` Reports</h1>
                 </div>
             </div>
 
@@ -34,12 +34,12 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="email"> Date Of Joining </label>
+                                <label for="email"> D.O.J </label>
                                 <input type="text" class="form-control" id="doj" name="doj" >
                             </div>
   
                             <div class="form-group">
-                                <label for="email"> Branch </label>
+                                <label for="email"> Branch</label>
                                 <select  class="form-control" id="branch" name="branch" >
                                     <option value="" >Select Branch</option>
                                     <?php
@@ -255,7 +255,7 @@
                         </div>
                         <div class="modal-footer">
                             <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
-                            <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()">Print</button></span>
+                            <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
                         </div>
                     </div>
                     </div>
@@ -273,7 +273,7 @@
                         </div>
                         <div class="modal-footer">
                         <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
-                        <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()">Print</button></span>
+                        <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
                         </div>
                     </div>
                     </div>

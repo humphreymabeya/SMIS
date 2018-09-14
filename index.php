@@ -70,7 +70,7 @@ include("Include/header.php");
                                             $totalstaff = $tpr['total'];
                                         ?>
                                         <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $totalstaff ;?> </h5><hr></div>
-                                        <div>Total Number of Staff</div>
+                                        <div>Total No. of Staff</div>
                                     </div>
                                 </div>
                             </div>

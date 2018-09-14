@@ -30,8 +30,6 @@
 			$remark = mysqli_real_escape_string($conn,$_POST['remark']);
 			$salary = mysqli_real_escape_string($conn,$_POST['salary']);
 			$q1 = $conn->query("INSERT INTO staff (iname,joindate,contact,idno,about,emailid,branch,salary,remark) VALUES ('$iname','$joindate','$contact','$idno','$about','$emailid','$branch','$salary','$remark')") ;
-			// $q1 = $conn->query("INSERT INTO staff (iname,joindate,salary) values ('$iname', '$joindate', '$salary')");
-			// $sid = $conn->insert_id;	
 			echo '<script type="text/javascript">window.location="staff.php?act=1";</script>';
 			
 		}else
@@ -261,20 +259,20 @@
 						emailid: "email",
 						branch: "required",
 					
-					contact: {
-						required: true,
-						digits: true
+						contact: {
+							required: true,
+							digits: true
+						},
+						idno: {
+							required: true,
+							digits: true
+						},
+						salary: {
+							required: true,
+							digits: true
+						},
+						
 					},
-					idno: {
-						required: true,
-						digits: true
-					},
-					salary: {
-						required: true,
-						digits: true
-					},
-					
-				},
 				<?php
 				}else
 				{
@@ -349,14 +347,14 @@
             <link href="../../css/datatable/datatable.css" rel="stylesheet" />
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Manage Instructors` Details
+                    Manage Staff` Details
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive table-sorting">
                         <table class=" table table-bordered table-striped" id="tSortable22">
                             <thead>
                                 <tr>
-                                    <th>Instructor No.</th>
+                                    <th>Staff No.</th>
                                     <th>Name / Contact</th>
                                     <th>ID Number</th>
                                     <th>DOA</th>
@@ -378,7 +376,7 @@
 												<td><label class="label label-success">Active</label></td>
 												<td>
 													<a href="staff.php?action=edit&id='.$r['id'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
-													<a onclick="return confirm(\'Are you sure you want to delete this record\');" href="staff.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></a> 
+													<a onclick="return confirm(\'Are you sure you want to delete this record?\');" href="staff.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></a> 
 												</td>
 										</tr>';
 										$i++;
