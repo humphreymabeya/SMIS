@@ -34,13 +34,13 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Email">Gross Pay (mnth)</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" value="'.$res['salary'].'" disabled>
+                    <input type="text" class="form-control" id="fixed_salary" value="'.$res['salary'].'" disabled>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Email">Salary Paid:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="salary_paid" name="salary_paid" />
+                    <input type="text" class="form-control" id="salary_paid" name="salary_paid" autofocus />
                     <input type="hidden" value="'.$res['id'].'" name="sid">
                 </div>
             </div>
@@ -120,10 +120,15 @@
               
               salary_paid: {
                 required: true,
-                digits: true,
-                max:'.$res['salary'].'
-              },  
+                digits: true,                
+                equalTo: "#fixed_salary",
+              }
               
+            },
+            messages: {
+                salary_paid: {
+                    equalTo: "Please enter the same Amount as the required gross pay above",
+                }
             },
             errorElement: "em",
             errorPlacement: function ( error, element ) {

@@ -62,9 +62,9 @@ include("../Include/header.php")
 							if(isset($_REQUEST['act']) &&  @$_REQUEST['act']=='1')
 							{
 							echo '<div class="alert alert-success">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong>Success!</strong> Password Changed Successfully.
-							</div>';
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									<strong>Success!</strong> Password Changed Successfully.
+								</div>';
 
 							}
 							echo $error;

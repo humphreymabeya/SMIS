@@ -126,110 +126,105 @@
     </form>
 
     <script type="text/javascript">
-    $(document).ready( function() {
-    $("#submitdate").datepicker( {
-            changeMonth: true,
-            changeYear: true,
-          
-            dateFormat: "yy-mm-dd",
-          
+      $(document).ready( function() {
+        $("#submitdate").datepicker( {
+          changeMonth: true,
+          changeYear: true,   
+          dateFormat: "yy-mm-dd",    
         });
 
-  ///////////////////////////
+        ///////////////////////////
 
-  $( "#signupForm1" ).validate( {
-				rules: {
-					submitdate: "required",
-					paid: {
-						required: true,
-						digits: true,
-						max:'.$res['balance'].'
-					},
-					introduction: {
-            digits: true,
-            required: true,
-          },
-          os :{
-            digits: true,
-            required: true,
-          },
-          msword :{
-            digits: true,
-            required: true,
-          },
-          msexcel :{
-            digits: true,
-            required: true,
-          },
-          msaccess :{
-            digits: true,
-            required: true,
-          },
-          mspowerpoint :{
-            digits: true,
-            required: true,
-          },
-          mspublishing :{
-            digits: true,
-            required: true,
-          },
-          internet :{
-            digits: true,
-            required: true,
-          },
-				},
-				errorElement: "em",
-				errorPlacement: function ( error, element ) {
-					// Add the `help-block` class to the error element
-					error.addClass( "help-block" );
+        $( "#signupForm1" ).validate( {
+              rules: {
+                submitdate: "required",
+                paid: {
+                  required: true,
+                  digits: true,
+                  max:'.$res['balance'].'
+                },
+                introduction: {
+                  digits: true,
+                  required: true,
+                },
+                os :{
+                  digits: true,
+                  required: true,
+                },
+                msword :{
+                  digits: true,
+                  required: true,
+                },
+                msexcel :{
+                  digits: true,
+                  required: true,
+                },
+                msaccess :{
+                  digits: true,
+                  required: true,
+                },
+                mspowerpoint :{
+                  digits: true,
+                  required: true,
+                },
+                mspublishing :{
+                  digits: true,
+                  required: true,
+                },
+                internet :{
+                  digits: true,
+                  required: true,
+                },
+              },
+              errorElement: "em",
+              errorPlacement: function ( error, element ) {
+                // Add the `help-block` class to the error element
+                error.addClass( "help-block" );
 
-					// Add `has-feedback` class to the parent div.form-group
-					// in order to add icons to inputs
-					element.parents( ".col-sm-10, .col-sm-8" ).addClass( "has-feedback" );
+                // Add `has-feedback` class to the parent div.form-group
+                // in order to add icons to inputs
+                element.parents( ".col-sm-10, .col-sm-8" ).addClass( "has-feedback" );
 
-					if ( element.prop( "type" ) === "checkbox" ) {
-						error.insertAfter( element.parent( "label" ) );
-					} else {
-						error.insertAfter( element );
-					}
+                if ( element.prop( "type" ) === "checkbox" ) {
+                  error.insertAfter( element.parent( "label" ) );
+                } else {
+                  error.insertAfter( element );
+                }
 
-					
-					if ( !element.next( "span" )[ 0 ] ) {
-						$( "<span class=\'glyphicon glyphicon-remove form-control-feedback\'></span>" ).insertAfter( element );
-					}
-				},
-				success: function ( label, element ) {
-					if ( !$( element ).next( "span" )[ 0 ] ) {
-						$( "<span class=\'glyphicon glyphicon-ok form-control-feedback\'></span>" ).insertAfter( $( element ) );
-					}
-				},
-				highlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-10, .col-sm-8" ).addClass( "has-error" ).removeClass( "has-success" );
-					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-				},
-				unhighlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-10, .col-sm-8" ).addClass( "has-success" ).removeClass( "has-error" );
-					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-        }
-        
-			} );
+                
+                if ( !element.next( "span" )[ 0 ] ) {
+                  $( "<span class=\'glyphicon glyphicon-remove form-control-feedback\'></span>" ).insertAfter( element );
+                }
+              },
+              success: function ( label, element ) {
+                if ( !$( element ).next( "span" )[ 0 ] ) {
+                  $( "<span class=\'glyphicon glyphicon-ok form-control-feedback\'></span>" ).insertAfter( $( element ) );
+                }
+              },
+              highlight: function ( element, errorClass, validClass ) {
+                $( element ).parents( ".col-sm-10, .col-sm-8" ).addClass( "has-error" ).removeClass( "has-success" );
+                $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+              },
+              unhighlight: function ( element, errorClass, validClass ) {
+                $( element ).parents( ".col-sm-10, .col-sm-8" ).addClass( "has-success" ).removeClass( "has-error" );
+                $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+              }
+              
+            } );
 
-
-  //////////////////////////	
-	
-	
+            //////////////////////////	
 	
       });
 
-      </script>
+    </script>
       
-      ';
+    ';
 
-    }else
+  }else
     {
       echo "Something Goes Wrong! Try After some time.";
     }
-  }
+}
 //   code to output exam result
   if(isset($_POST['req']) && $_POST['req']=='2') 
   {
@@ -260,14 +255,13 @@
                 <td>'.$sr['contact'].'</td>
               <th>Joining Date</th>
                 <td>'.date("d-m-Y", strtotime($sr['joindate'])).'</td>
+              <th>Status</th>
+              <td>Active</td>
             </tr>
           </table>
         </div>
         ';
 
-        
-        
-      
   echo '	  
       </tbody>
     </table>
@@ -448,6 +442,6 @@
   echo 'No exam score submitted.';
   }
   
-  }
+}
 		
 ?>

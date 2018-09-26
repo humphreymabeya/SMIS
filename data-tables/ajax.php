@@ -24,7 +24,7 @@
 		$result = $conn->query("SELECT iname,contact FROM staff where salary>0 and (iname LIKE '%".$_GET['name_startsWith']."%' or contact LIKE '%".$_GET['name_startsWith']."%')   ");	
 		$data = array();
 		while ($row = $result->fetch_assoc()) {
-			//array_push($data, $row['sname'].'-'.$row['contact']);	
+			//array_push($data, $row['iname'].'-'.$row['contact']);	
 			array_push($data, $row['iname']);	
 		}	
 		echo json_encode($data);

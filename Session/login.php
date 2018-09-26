@@ -118,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="form-group">
                                 <label class="control-label col-sm-4">Username:</label>
                                 <div class="col-sm-8 <?php echo (!empty($username_err)) ? 'has-error': '';?>">
-                                    <input type="text" value="<?php echo $username;?>" name="username" class="form-control" />
+                                    <input type="text" value="<?php echo $username;?>" name="username" class="form-control" autofocus/>
                                     <span class = "help-block"><?php echo $username_err;?></span>
                                 </div>
                             </div>

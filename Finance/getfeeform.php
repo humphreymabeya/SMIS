@@ -169,6 +169,8 @@
             <td>'.$sr['contact'].'</td>
           <th>Joining Date</th>
             <td>'.date("d-m-Y", strtotime($sr['joindate'])).'</td>
+          <th>Status</th>
+            <td>Active</td>
         </tr>
       </table>
     </div>

@@ -1,11 +1,12 @@
 @media print{
     table.table-bordered{
         border: 1px solid black !important;
+        padding: 5px !important;
     }
     table.table-bordered > tbody >tr >td{
         border: 1px solid #000 !important ;
         border-width: 1px 0 0 1px !important;
-        padding: 5px !important;
+        padding: 10px !important;
     }
     table.table-bordered > tbody >tr >th{
         border: 1px solid #000 !important ;
@@ -15,7 +16,12 @@
     table.table-bordered > thead > tr > th{
         border: 1px solid #000 !important;
         border-width: 1px 0 0 1px !important;
-        padding: 5px ;
+        padding: 5px !important ;
+    }
+    table.table-bordered tr > td{
+        border: 1px solid #000 !important;
+        border-width: 1px 0 0 1px !important;
+        padding: 5px !important ;
     } 
     body.modalprinter * {
         visibility: hidden;
@@ -36,12 +42,14 @@
     body.modalprinter .modal-dialog.focused,
     .modal-content .modal-body * {
         visibility: visible;
+        /* width: 100%; */
     }
     body.modalprinter .modal-dialog.focused
     .modal-content .modal-header,
     body.modalprinter .modal-dialog.focused
     .modal-content .modal-body{
         padding: 0;
+        /* width: 100%; */
     }
     body.modalprinter .modal-dialog.focused
     .modal-content .modal-header .modal-title{

@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Exam Info | SMIS</title>
+    <title>Exam Marks Entry | SMIS</title>
     <?php include("../Include/links.php"); ?>
 
     <style type="text/css">
@@ -68,7 +68,7 @@ include("../Include/header.php");
                                 </div>
   
                                 <div class="form-group">
-                                    <label for="email"> Date Of Joining </label>
+                                    <label for="email"> D.O.J </label>
                                     <input type="text" class="form-control" id="doj" name="doj" >
                                 </div>
   
@@ -108,8 +108,8 @@ include("../Include/header.php");
                                 var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
                                 var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
                                 $(this).val($.datepicker.formatDate('MM yy', new Date(year, month, 1)));
-                                }
-                            });
+                            }
+                        });
 
                         $("#doj").focus(function () {
                             $(".ui-datepicker-calendar").hide();
@@ -155,11 +155,11 @@ include("../Include/header.php");
 		                });
                         $('#find').click(function () {
                             mydatatable();
-                            });
+                        });
                         $('#clear').click(function () {
                             $('#searchform')[0].reset();
                             mydatatable();
-                            });
+                        });
                                     
                         function mydatatable()
                             {     
@@ -193,7 +193,7 @@ include("../Include/header.php");
                             'aoColumnDefs': [{
                                 'bSortable': false,
                                 'aTargets': [-1] /* 1st one, start by the right */
-                                }]
+                            }]
                         });
 
                             ///////////////////////////		                                

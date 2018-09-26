@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 30, 2018 at 11:05 AM
--- Server version: 5.7.22-0ubuntu18.04.1
+-- Generation Time: Sep 18, 2018 at 10:27 AM
+-- Server version: 5.7.23-0ubuntu0.18.04.1
 -- PHP Version: 7.2.7-0ubuntu0.18.04.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -40,7 +40,10 @@ CREATE TABLE `branch` (
 
 INSERT INTO `branch` (`id`, `branch`, `address`, `detail`, `delete_status`) VALUES
 (1, 'Uriri Institute', 'Uriri Business Block', 'OOP\r\nJAVA\r\nC#\r\nPython', '0'),
-(2, 'Migori Youth Empowerment', 'Location: Huduma Centre', 'Computer Training and Application Packages', '0');
+(2, 'Migori Youth Empowerment', 'Location: Huduma Centre', 'Computer Training and Application Packages', '0'),
+(3, 'Kehancha institute', 'Migori Sirare Road\r\nBox No. 789\r\nContact: 0754324553', 'Certificate Course in ICT', '0'),
+(4, 'Gusii Institute of Technology', 'Box 1006 Kisii\r\nMwalimu Sacco Plaza, 4th floor', 'Basic Application Packages\r\nIntroduction to Programming\r\nBasic Network Principles', '0'),
+(5, 'Machakos Institute Of Technology', 'box 1152 Machakos\r\nNext to Cathedral', 'Offers computer application packages', '0');
 
 -- --------------------------------------------------------
 
@@ -68,18 +71,21 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`id`, `stdid`, `introduction`, `os`, `msword`, `msexcel`, `msaccess`, `mspowerpoint`, `mspublishing`, `internet`, `submitdate`, `transaction_remark`) VALUES
-(1, '1', 99, 88, 77, 66, 55, 44, 33, 22, '2018-07-15 00:00:00', 'PASS'),
+(1, '1', 54, 88, 77, 66, 55, 53, 74, 78, '2018-07-15 00:00:00', ''),
 (3, '2', 85, 68, 48, 84, 62, 73, 57, 92, '2018-07-22 00:00:00', 'DISTINCTION'),
 (4, '3', 87, 54, 82, 91, 48, 57, 66, 53, '2018-07-16 00:00:00', 'CREDIT'),
 (5, '4', 55, 68, 74, 0, 0, 0, 0, 0, '2018-07-16 00:00:00', 'Pass'),
 (6, '5', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-17 00:00:00', NULL),
 (7, '6', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
 (8, '7', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
-(9, '8', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-23 00:00:00', NULL),
-(10, '9', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
-(11, '10', 58, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', ''),
+(9, '8', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-23 00:00:00', ''),
+(10, '9', 82, 84, 58, 78, 58, 60, 92, 64, '2018-07-24 00:00:00', ''),
+(11, '10', 58, 87, 52, 48, 54, 67, 43, 80, '2018-07-24 00:00:00', 'Cleared'),
 (12, '11', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
-(13, '12', 84, 54, 0, 0, 0, 0, 0, 0, '2018-07-30 00:00:00', '');
+(13, '12', 84, 54, 0, 0, 0, 0, 0, 0, '2018-07-30 00:00:00', 'PASS'),
+(14, '13', 56, 68, 88, 68, 50, 69, 81, 48, '2018-08-20 00:00:00', 'Completed'),
+(15, '14', 0, 0, 0, 0, 0, 0, 0, 0, '2018-08-29 00:00:00', NULL),
+(16, '15', 56, 48, 79, 59, 99, 67, 0, 0, '2018-09-05 00:00:00', 'Not Completed');
 
 -- --------------------------------------------------------
 
@@ -117,7 +123,17 @@ INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcatio
 (15, '9', 350, '2018-07-24 00:00:00', 'installment 2'),
 (16, '12', 1000, '2018-07-30 00:00:00', 'Installment one'),
 (17, '12', 500, '2018-07-24 00:00:00', 'installment 2'),
-(18, '4', 500, '2018-07-30 00:00:00', 'final installment');
+(18, '4', 500, '2018-07-30 00:00:00', 'final installment'),
+(19, '1', 500, '2018-08-03 00:00:00', 'last installment'),
+(20, '3', 1000, '2018-08-08 00:00:00', 'installment 2'),
+(21, '10', 1000, '2018-08-15 00:00:00', 'installment 2'),
+(22, '13', 1000, '2018-08-20 00:00:00', 'installment 1'),
+(23, '3', 500, '2018-08-20 00:00:00', 'final installment'),
+(24, '14', 3000, '2018-08-29 00:00:00', 'Fully Paid'),
+(25, '15', 1500, '2018-09-05 00:00:00', 'installment 1'),
+(26, '15', 500, '2018-09-05 00:00:00', 'installment 2'),
+(27, '5', 500, '2018-09-05 00:00:00', 'final installment'),
+(28, '15', 1000, '2018-09-07 00:00:00', 'Full fee paid');
 
 -- --------------------------------------------------------
 
@@ -143,18 +159,21 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`, `fees`, `branch`, `balance`, `delete_status`) VALUES
-(1, '', 'Mabeyah Humphrey', '2018-07-15 00:00:00', '', '0719136107', 3000, '1', 500, '0'),
+(1, '', 'Mabeya Humphrey', '2018-07-15 00:00:00', '', '0719136107', 3000, '1', 0, '0'),
 (2, '', 'Crispin Mainya', '2018-07-22 00:00:00', '', '0715753947', 3000, '1', 0, '0'),
-(3, '', 'Harold Finch', '2018-07-16 00:00:00', '', '0719136108', 3000, '1', 1500, '0'),
+(3, '', 'Harold Finch', '2018-07-16 00:00:00', '', '0719136108', 3000, '1', 0, '0'),
 (4, '', 'Tony Jnr', '2018-07-16 00:00:00', '', '0798200017', 3000, '2', 0, '0'),
-(5, '', 'Mike Tyson', '2018-07-17 00:00:00', '', '0715158762', 3000, '2', 500, '0'),
+(5, '', 'Mike Tyson', '2018-07-17 00:00:00', '', '0715158762', 3000, '2', 0, '0'),
 (6, '', 'Otieno Omollo', '2018-07-24 00:00:00', '', '0712852963', 3000, '1', 3000, '0'),
 (7, '', 'John Reece', '2018-07-24 00:00:00', '', '0747859632', 3000, '1', 1500, '0'),
 (8, 'awino@test.test', 'Awinoh Mary', '2018-07-16 00:00:00', 'short', '0714895742', 3000, '2', 1000, '0'),
 (9, '', 'Dan Otieno', '2018-07-24 00:00:00', '', '0700000000', 3000, '2', 200, '0'),
-(10, '', 'Jack Wilshere', '2018-07-24 00:00:00', '', '0789524741', 3000, '1', 1500, '0'),
+(10, '', 'Jack Wilshere', '2018-07-24 00:00:00', '', '0789524741', 3000, '1', 500, '0'),
 (11, '', 'Eden Hazard', '2018-07-24 00:00:00', '', '0715753947', 3000, '2', 1800, '0'),
-(12, '', 'Janet Ndere', '2018-07-30 00:00:00', '', '0703687102', 3000, '2', 1500, '0');
+(12, '', 'Janet Ndere', '2018-07-30 00:00:00', '', '0703687102', 3000, '2', 1500, '0'),
+(13, 'magdaline.ndere@git.ac.ke', 'Magdaline Ndere', '2018-08-20 00:00:00', '', '0798272005', 3000, '4', 2000, '0'),
+(14, 'harris.harry@smis.ac.ke', 'Harris Harry', '2018-08-29 00:00:00', '', '0789741525', 3000, '4', 0, '1'),
+(15, '', 'Beryl Odhiambo', '2018-09-05 00:00:00', '', '0740503254', 3000, '5', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -176,7 +195,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `name`, `emailid`, `lastlogin`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Lewa', 'lewa@gmail.com', '0000-00-00 00:00:00'),
+(1, 'admin', '$2y$10$xmXkEr0V1osG0fBGfZUK3.QV1SCdZgIBskx.qplx9eW19ZjK0pCp2', 'Lewa', 'lewa@gmail.com', '0000-00-00 00:00:00'),
 (2, 'guest', 'guest', 'guest', '101', '2018-07-11 00:00:00');
 
 -- --------------------------------------------------------
@@ -197,9 +216,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'admin', '$2y$10$u.gYx5nvVKdkIv61GDPq8.8kLNxu9K7UlegMnByzqe/CnlBdKIqKW', '2018-07-19 11:00:39'),
+(1, 'admin', '$2y$10$aFyODiTtPXkC6zIlH7qTQOTWqgi3fLISQj8kaiC7Hafk2h6uldnLe', '2018-07-19 11:00:39'),
 (2, 'guest', '$2y$10$97aNHrh/jnyS1mGL8a6NS.zIKoDHsSqYo/pT5YfKXhcSpYCJ5jtYe', '2018-07-24 14:53:28'),
-(10, 'test1', '$2y$10$MEjrg2xS7K2CbMQu29HcyuIcqyp5bNq/g4rNUfd9rdkE0xX4j2Mpe', '2018-07-26 11:23:54'),
+(10, 'test1', '$2y$10$qIPGGJUzwk2Sr/4HC2bZpeWOVE/WNq1BqRHE4U8w6PHSueogyDgO6', '2018-07-26 11:23:54'),
 (11, 'test', '$2y$10$h5wzpRLrqVY0aOoPxAzNSOUnwUAgPIzkrdYbMHlVsJmax7XFUP//K', '2018-07-27 10:56:21'),
 (12, 'janet', '$2y$10$n881ozlk/tijP40MCOnnCOUdTQI0ML68rgNaq8iZfcievIjOo5/Ca', '2018-07-27 10:59:55');
 
@@ -252,22 +271,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `fees_transaction`
 --
 ALTER TABLE `fees_transaction`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `user`
 --

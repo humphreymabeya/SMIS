@@ -17,6 +17,8 @@
 	<link href="../../css/datepicker.css" rel="stylesheet" />	
 	<link href="../../css/datatable/datatable.css" rel="stylesheet" />   
     <script src="../../js/jquery-1.10.2.js"></script>	
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <script type='text/javascript' src='../../js/jquery/jquery-ui-1.10.1.custom.min.js'></script>
     <script type="text/javascript" src="../../js/validation/jquery.validate.min.js"></script>
     <script src="../../js/dataTable/jquery.dataTables.min.js"></script>

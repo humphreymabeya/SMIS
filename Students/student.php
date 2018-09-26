@@ -19,12 +19,10 @@
 	{
 		$sname = mysqli_real_escape_string($conn,$_POST['sname']);
 		$joindate = mysqli_real_escape_string($conn,$_POST['joindate']);
-
 		$contact = mysqli_real_escape_string($conn,$_POST['contact']);
 		$about = mysqli_real_escape_string($conn,$_POST['about']);
 		$emailid = mysqli_real_escape_string($conn,$_POST['emailid']);
 		$branch = mysqli_real_escape_string($conn,$_POST['branch']);
-
 		if($_POST['action']=="add")
 		{
 			$remark = mysqli_real_escape_string($conn,$_POST['remark']);

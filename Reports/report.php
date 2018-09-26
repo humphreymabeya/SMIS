@@ -10,7 +10,7 @@
     <title>Students` Reports | SMIS</title>
     <?php include("../Include/links.php"); ?>
     <link href="../../css/print.css" rel="stylesheet" />   	
-    <script src="../../js/print.js"></script>	
+    <!-- <script src="../../js/print.js"></script>	 -->
 </head>
 <?php
     include("../Include/header.php");
@@ -57,7 +57,6 @@
                             <button type="reset" class="btn btn-danger btn-sm" id="clear" > Clear </button>
                         </form>
                     </fieldset>
-
                 </div>
             </div>
 
@@ -136,7 +135,7 @@
 		            });
 	
                     $('#find').click(function () {
-                    mydatatable();
+                        mydatatable();
                     });
 
 
@@ -158,10 +157,10 @@
 							    'bServerSide': true,
 							    'sAjaxSource': "../data-tables/datatable.php?"+$('#searchform').serialize()+"&type=report",
 							    'aoColumnDefs': [{
-                                'bSortable': false,
+                                    'bSortable': false,
                                     'aTargets': [-1] /* 1st one, start by the right */
-                                    }]
-                                });
+                                }]
+                            });
                     }
 		
                         ////////////////////////////
@@ -177,7 +176,7 @@
                         'aoColumnDefs': [{
                             'bSortable': false,
                             'aTargets': [-1] /* 1st one, start by the right */
-                            }]
+                        }]
                     });
 
                     ///////////////////////////		
@@ -245,39 +244,56 @@
 	            <!-- Modal -->
                 <div class="modal fade modalprinter printable" id="myModal" role="dialog">
                     <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="col-12 modal-title text-center">Fee Report</h4>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="col-12 modal-title text-center">Fee Report</h4>
+                            </div>
+                            <div class="modal-body" id="formcontent">
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
+                                <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
+                            </div>
                         </div>
-                        <div class="modal-body" id="formcontent">
-                        
-                        </div>
-                        <div class="modal-footer">
-                            <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
-                            <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
-                        </div>
-                    </div>
                     </div>
                 </div>	
 
                 <div class="modal fade modalprinter printable" id="myModal1" role="dialog">
                     <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="col-12 modal-title text-center">Examinations Result Slip</h4>
-                        </div>
-                        <div class="modal-body" id="formcontent1">
-                        
-                        </div>
-                        <div class="modal-footer">
-                        <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
-                        <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="col-12 modal-title text-center">Examinations Result Slip</h4>
+                            </div>
+                            <div class="modal-body" id="formcontent1">
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <span class="pull-right"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></span>
+                                <span class="pull-left"><button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa fa-print"></i> Print</button></span>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>	 			
+                </div>	 	
+                
+                <script >
+                    $().ready(function(){
+                        $('.modal.printable').on('shown.bs.modal', 
+                        function(){
+                            $('.modal-dialog', this).addClass('focused');
+                            $('body').addClass('modalprinter');
+
+                            if($(this).hasClass('autoprint')){
+                                window.print();
+                            }
+                        }).on('hidden.bs.modal' , function(){
+                            $('.modal-dialog', this).removeClass('focused');
+                            $('body').removeClass('modalprinter');
+                        });
+                    });
+                </script>
         </div>
             <!-- /. PAGE INNER  -->
     </div>

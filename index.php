@@ -1,6 +1,7 @@
 <?php
     include("Include/dbconnect.php");
     include("Include/checklogin.php");
+    $sql = '';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <link href="css/panel.css" rel="stylesheet" />
 </head>
 <?php
-include("Include/header.php");
+    include("Include/header.php");
 ?>
         <div id="page-wrapper">
             <div id="page-inner">

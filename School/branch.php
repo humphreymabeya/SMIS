@@ -104,7 +104,7 @@
 					<div class="col-sm-8 col-sm-offset-2">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-							<?php echo ($action=="add")? "Add School": "Edit School"; ?>
+								 <?php echo ($action=="add")? "Add School": "Edit School"; ?>
 							</div>
 							<form action="branch.php" method="post" id="signupForm1" class="form-horizontal">
 								<div class="panel-body">

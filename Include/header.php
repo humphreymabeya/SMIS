@@ -62,17 +62,20 @@
                     <li>
                         <a href="../Staff/staff.php"><i class="fa fa-user"></i>Instructors</a>
                     </li>
-					
                     <li>
-                        <a href="#"><i class="fa fa-file-pdf-o"></i>Reports <span class="fa arrow"></span></a>
+                        <a href="../Reports/report.php"><i class="fa fa-file-pdf-o"></i>Reports</a>
+                    </li>
+					
+                    <!-- <li>
+                        <a href="#"><i class="fa fa-file-pdf-o"></i>Reports <span class="fa arrow"></span></a> -->
                         <!-- second level -->
-                        <ul class="nav nav-second-level">
+                        <!-- <ul class="nav nav-second-level">
                             <li>
                                 <a href="../Reports/report.php"><i class="fa fa-file-word-o"></i>Students</a>
                             </li>
                             
                         </ul>
-                    </li>
+                    </li> -->
 					
 					<li>
                         <a href="#"><i class="fa fa-cogs fa-fw"></i> Settings<span class="fa arrow"></span></a>
