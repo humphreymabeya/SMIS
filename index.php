@@ -42,7 +42,7 @@
                                             $totalstudents = $tpr['total'];
                                         ?>
                                         <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $totalstudents ;?> </h5><hr></div>
-                                        <div>Total No. of Students</div>
+                                        <div>Students</div>
                                     </div>
                                 </div>
                             </div>

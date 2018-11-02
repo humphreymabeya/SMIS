@@ -55,17 +55,17 @@
                             <legend  class="scheduler-border">Search:</legend>
                             <form class="form-inline" role="form" id="searchform">
                                 <div class="form-group">
-                                    <label for="email">Name:</label>
+                                    <label for="email">Name</label>
                                     <input type="text" class="form-control" id="staff" name="staff">
                                 </div>
   
                                 <div class="form-group">
-                                    <label for="email"> D.O.J: </label>
+                                    <label for="email"> D.O.J </label>
                                     <input type="text" class="form-control" id="doj" name="doj" >
                                 </div>
   
                                 <div class="form-group">
-                                    <label for="email"> Branch: </label>
+                                    <label for="email"> Branch </label>
                                     <select  class="form-control" id="branch" name="branch" >
                                         <option value="" >Select Branch</option>
                                         <?php
