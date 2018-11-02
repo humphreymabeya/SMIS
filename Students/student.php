@@ -411,7 +411,7 @@
                                     <th>DOJ</th>
                                     <th>Fees</th>
 									<th>Balance</th>
-									<th>Action</th>
+									<th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>

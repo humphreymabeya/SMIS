@@ -12,7 +12,7 @@
                 <a class="navbar-brand" href="../index.php">SMIS | Codesoft</a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
-                <marquee><h4 style="color:black;">Hi, <b><i class="fa fa-user fa-fw"></i> <?php echo htmlspecialchars($_SESSION['username']); ?> </b> </h4> </marquee>
+                <h4 style="color:black;">Hi, <b><i class="fa fa-user fa-fw"></i> <?php echo htmlspecialchars($_SESSION['username']); ?> </b> </h4>
             </ul>
         </nav>
         

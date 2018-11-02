@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 18, 2018 at 10:27 AM
+-- Generation Time: Oct 24, 2018 at 07:17 PM
 -- Server version: 5.7.23-0ubuntu0.18.04.1
--- PHP Version: 7.2.7-0ubuntu0.18.04.2
+-- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -78,14 +78,16 @@ INSERT INTO `exam` (`id`, `stdid`, `introduction`, `os`, `msword`, `msexcel`, `m
 (6, '5', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-17 00:00:00', NULL),
 (7, '6', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
 (8, '7', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
-(9, '8', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-23 00:00:00', ''),
+(9, '8', 56, 75, 100, 0, 0, 0, 0, 0, '2018-07-23 00:00:00', ''),
 (10, '9', 82, 84, 58, 78, 58, 60, 92, 64, '2018-07-24 00:00:00', ''),
 (11, '10', 58, 87, 52, 48, 54, 67, 43, 80, '2018-07-24 00:00:00', 'Cleared'),
 (12, '11', 0, 0, 0, 0, 0, 0, 0, 0, '2018-07-24 00:00:00', NULL),
 (13, '12', 84, 54, 0, 0, 0, 0, 0, 0, '2018-07-30 00:00:00', 'PASS'),
-(14, '13', 56, 68, 88, 68, 50, 69, 81, 48, '2018-08-20 00:00:00', 'Completed'),
+(14, '13', 56, 68, 88, 68, 50, 69, 81, 48, '2018-08-20 00:00:00', ''),
 (15, '14', 0, 0, 0, 0, 0, 0, 0, 0, '2018-08-29 00:00:00', NULL),
-(16, '15', 56, 48, 79, 59, 99, 67, 0, 0, '2018-09-05 00:00:00', 'Not Completed');
+(16, '15', 56, 48, 79, 59, 99, 67, 60, 70, '2018-09-05 00:00:00', ''),
+(17, '16', 89, 90, 87, 68, 98, 67, 86, 57, '2018-09-26 00:00:00', ''),
+(18, '17', 57, 78, 79, 86, 67, 89, 98, 45, '2018-10-22 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,12 @@ INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcatio
 (25, '15', 1500, '2018-09-05 00:00:00', 'installment 1'),
 (26, '15', 500, '2018-09-05 00:00:00', 'installment 2'),
 (27, '5', 500, '2018-09-05 00:00:00', 'final installment'),
-(28, '15', 1000, '2018-09-07 00:00:00', 'Full fee paid');
+(28, '15', 1000, '2018-09-07 00:00:00', 'Full fee paid'),
+(29, '7', 1000, '2018-09-19 00:00:00', '2 installment'),
+(30, '16', 1000, '2018-09-26 00:00:00', 'installment 1'),
+(31, '16', 500, '2018-09-27 00:00:00', ''),
+(32, '17', 1000, '2018-10-22 00:00:00', 'installmnt 1'),
+(33, '17', 1800, '2018-10-22 00:00:00', 'instlmnt 2');
 
 -- --------------------------------------------------------
 
@@ -165,7 +172,7 @@ INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`,
 (4, '', 'Tony Jnr', '2018-07-16 00:00:00', '', '0798200017', 3000, '2', 0, '0'),
 (5, '', 'Mike Tyson', '2018-07-17 00:00:00', '', '0715158762', 3000, '2', 0, '0'),
 (6, '', 'Otieno Omollo', '2018-07-24 00:00:00', '', '0712852963', 3000, '1', 3000, '0'),
-(7, '', 'John Reece', '2018-07-24 00:00:00', '', '0747859632', 3000, '1', 1500, '0'),
+(7, '', 'John Reece', '2018-07-24 00:00:00', '', '0747859632', 3000, '1', 500, '0'),
 (8, 'awino@test.test', 'Awinoh Mary', '2018-07-16 00:00:00', 'short', '0714895742', 3000, '2', 1000, '0'),
 (9, '', 'Dan Otieno', '2018-07-24 00:00:00', '', '0700000000', 3000, '2', 200, '0'),
 (10, '', 'Jack Wilshere', '2018-07-24 00:00:00', '', '0789524741', 3000, '1', 500, '0'),
@@ -173,7 +180,9 @@ INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`,
 (12, '', 'Janet Ndere', '2018-07-30 00:00:00', '', '0703687102', 3000, '2', 1500, '0'),
 (13, 'magdaline.ndere@git.ac.ke', 'Magdaline Ndere', '2018-08-20 00:00:00', '', '0798272005', 3000, '4', 2000, '0'),
 (14, 'harris.harry@smis.ac.ke', 'Harris Harry', '2018-08-29 00:00:00', '', '0789741525', 3000, '4', 0, '1'),
-(15, '', 'Beryl Odhiambo', '2018-09-05 00:00:00', '', '0740503254', 3000, '5', 0, '0');
+(15, '', 'Beryl Odhiambo', '2018-09-05 00:00:00', '', '0740503254', 3000, '5', 0, '0'),
+(16, '', 'Juliet Minoo', '2018-09-26 00:00:00', '', '0705377595', 3000, '2', 1500, '0'),
+(17, '', 'Anne Abby', '2018-10-22 00:00:00', '', '0714852963', 3000, '5', 200, '0');
 
 -- --------------------------------------------------------
 
@@ -216,7 +225,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'admin', '$2y$10$aFyODiTtPXkC6zIlH7qTQOTWqgi3fLISQj8kaiC7Hafk2h6uldnLe', '2018-07-19 11:00:39'),
+(1, 'Admin', '$2y$10$aFyODiTtPXkC6zIlH7qTQOTWqgi3fLISQj8kaiC7Hafk2h6uldnLe', '2018-07-19 11:00:39'),
 (2, 'guest', '$2y$10$97aNHrh/jnyS1mGL8a6NS.zIKoDHsSqYo/pT5YfKXhcSpYCJ5jtYe', '2018-07-24 14:53:28'),
 (10, 'test1', '$2y$10$qIPGGJUzwk2Sr/4HC2bZpeWOVE/WNq1BqRHE4U8w6PHSueogyDgO6', '2018-07-26 11:23:54'),
 (11, 'test', '$2y$10$h5wzpRLrqVY0aOoPxAzNSOUnwUAgPIzkrdYbMHlVsJmax7XFUP//K', '2018-07-27 10:56:21'),
@@ -276,17 +285,17 @@ ALTER TABLE `branch`
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `fees_transaction`
 --
 ALTER TABLE `fees_transaction`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `user`
 --
