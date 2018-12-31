@@ -32,6 +32,7 @@
                                 Location: Machakos, Kenya<br>
                                 Email: humphreymabeya@gmail.com<br>
                                 Contact: +254719 136 107<br>
+                                Company: Codesoft Technologies<br>
                                 Languages: PHP, Python, C#, MySQL, Javascript<br>
                             </p>
                         </div>
