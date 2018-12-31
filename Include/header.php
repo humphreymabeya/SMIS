@@ -89,6 +89,9 @@
                                 <li>
                                     <a href="#"><i class="fa fa-history"></i>User logs</a>
                                 </li>
+                                <li>
+                                    <a href="../Session/aboutDev.php"><i class="fa fa-user"></i>About Developer</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                     </li> 
