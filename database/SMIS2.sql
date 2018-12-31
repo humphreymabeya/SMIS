@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 24, 2018 at 07:17 PM
--- Server version: 5.7.23-0ubuntu0.18.04.1
+-- Generation Time: Dec 31, 2018 at 01:54 PM
+-- Server version: 5.7.24-0ubuntu0.18.04.1
 -- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -87,7 +87,8 @@ INSERT INTO `exam` (`id`, `stdid`, `introduction`, `os`, `msword`, `msexcel`, `m
 (15, '14', 0, 0, 0, 0, 0, 0, 0, 0, '2018-08-29 00:00:00', NULL),
 (16, '15', 56, 48, 79, 59, 99, 67, 60, 70, '2018-09-05 00:00:00', ''),
 (17, '16', 89, 90, 87, 68, 98, 67, 86, 57, '2018-09-26 00:00:00', ''),
-(18, '17', 57, 78, 79, 86, 67, 89, 98, 45, '2018-10-22 00:00:00', '');
+(18, '17', 57, 78, 79, 86, 67, 89, 98, 45, '2018-10-22 00:00:00', ''),
+(19, '18', 67, 98, 96, 45, 76, 54, 78, 56, '2018-11-09 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -140,7 +141,75 @@ INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcatio
 (30, '16', 1000, '2018-09-26 00:00:00', 'installment 1'),
 (31, '16', 500, '2018-09-27 00:00:00', ''),
 (32, '17', 1000, '2018-10-22 00:00:00', 'installmnt 1'),
-(33, '17', 1800, '2018-10-22 00:00:00', 'instlmnt 2');
+(33, '17', 1800, '2018-10-22 00:00:00', 'instlmnt 2'),
+(34, '17', 200, '2018-10-30 00:00:00', 'last instmnt'),
+(35, '18', 1000, '2018-11-09 00:00:00', 'installment 1'),
+(36, '18', 500, '2018-11-09 00:00:00', 'installment 2'),
+(37, '18', 1500, '2018-11-09 00:00:00', 'cleared');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salary_payment`
+--
+
+CREATE TABLE `salary_payment` (
+  `id` int(255) NOT NULL,
+  `staffid` varchar(255) NOT NULL,
+  `salary_paid` int(255) NOT NULL,
+  `pay_month` varchar(255) NOT NULL,
+  `pay_year` varchar(255) NOT NULL,
+  `submitdate` datetime NOT NULL,
+  `transaction_remark` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salary_payment`
+--
+
+INSERT INTO `salary_payment` (`id`, `staffid`, `salary_paid`, `pay_month`, `pay_year`, `submitdate`, `transaction_remark`) VALUES
+(1, '2', 3000, 'September', '2018', '2018-09-12 00:00:00', 'sep salary fully paid'),
+(2, '1', 45000, 'July', '2018', '2018-09-12 00:00:00', 'July salary paid'),
+(3, '8', 28000, 'September', '2018', '2018-09-12 00:00:00', 'September salary fully paid'),
+(4, '5', 3000, 'August', '2018', '2018-09-12 00:00:00', 'August salary fully paid'),
+(5, '1', 45000, 'August', '2018', '2018-08-03 00:00:00', 'August Salary Paid'),
+(6, '1', 45000, 'September', '2018', '2018-09-14 00:00:00', 'September Salary Paid'),
+(7, '7', 2111, 'October', '2018', '2018-11-02 00:00:00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `id` int(255) NOT NULL,
+  `emailid` varchar(255) NOT NULL,
+  `iname` varchar(255) NOT NULL,
+  `joindate` datetime NOT NULL,
+  `about` text NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `idno` varchar(255) NOT NULL,
+  `salary` int(255) NOT NULL,
+  `branch` varchar(255) NOT NULL,
+  `remark` text NOT NULL,
+  `delete_status` enum('0','1') NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`id`, `emailid`, `iname`, `joindate`, `about`, `contact`, `idno`, `salary`, `branch`, `remark`, `delete_status`) VALUES
+(1, '', 'Mabeya Humphrey', '2018-08-24 00:00:00', '', '0719136107', '32654435', 45000, '5', '', '0'),
+(2, '', 'John Doee', '2018-08-22 00:00:00', '', '0719136108', '5897554', 3000, '3', '', '0'),
+(3, '', 'omollo ', '2018-08-22 00:00:00', '', '0798200017', '0', 3000, '4', '', '1'),
+(4, '', 'omollo ', '2018-08-24 00:00:00', '', '0719136107', '12345678', 3000, '4', '', '0'),
+(5, '', 'otieno', '2018-08-09 00:00:00', '', '0719136107', '12345678', 3000, '4', '', '0'),
+(6, '', 'humph', '2018-08-30 00:00:00', '', '0715158762', '44789628', 4000, '2', 'monthly salary\r\nexcluded tax', '0'),
+(7, '', 'me', '2018-07-12 00:00:00', '', '0798200017', '32653769', 2111, '3', '', '0'),
+(8, '', 'Peter Ciira', '2018-09-04 00:00:00', '', '0715753947', '32654435', 28000, '3', '', '0'),
+(9, '', 'Mick Dean ', '2018-12-07 00:00:00', '', '0700345678', '60008734', 5600, '3', 'First Salary', '0');
 
 -- --------------------------------------------------------
 
@@ -182,30 +251,8 @@ INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`,
 (14, 'harris.harry@smis.ac.ke', 'Harris Harry', '2018-08-29 00:00:00', '', '0789741525', 3000, '4', 0, '1'),
 (15, '', 'Beryl Odhiambo', '2018-09-05 00:00:00', '', '0740503254', 3000, '5', 0, '0'),
 (16, '', 'Juliet Minoo', '2018-09-26 00:00:00', '', '0705377595', 3000, '2', 1500, '0'),
-(17, '', 'Anne Abby', '2018-10-22 00:00:00', '', '0714852963', 3000, '5', 200, '0');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `emailid` varchar(255) NOT NULL,
-  `lastlogin` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `username`, `password`, `name`, `emailid`, `lastlogin`) VALUES
-(1, 'admin', '$2y$10$xmXkEr0V1osG0fBGfZUK3.QV1SCdZgIBskx.qplx9eW19ZjK0pCp2', 'Lewa', 'lewa@gmail.com', '0000-00-00 00:00:00'),
-(2, 'guest', 'guest', 'guest', '101', '2018-07-11 00:00:00');
+(17, '', 'Anne Abby', '2018-10-22 00:00:00', '', '0714852963', 3000, '5', 0, '0'),
+(18, '', 'Candy', '2018-11-09 00:00:00', '', '0706453443', 3000, '5', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -254,15 +301,21 @@ ALTER TABLE `fees_transaction`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `student`
+-- Indexes for table `salary_payment`
 --
-ALTER TABLE `student`
+ALTER TABLE `salary_payment`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `staff`
 --
-ALTER TABLE `user`
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -285,22 +338,27 @@ ALTER TABLE `branch`
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `fees_transaction`
 --
 ALTER TABLE `fees_transaction`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+--
+-- AUTO_INCREMENT for table `salary_payment`
+--
+ALTER TABLE `salary_payment`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `staff`
+--
+ALTER TABLE `staff`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `users`
 --

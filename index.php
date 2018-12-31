@@ -35,13 +35,11 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $conn->query($sql);
-                                            $sql = "SELECT count(*) as total FROM student where delete_status='0'";
-                                            $studentcount = $conn->query($sql);
-                                            $tpr = $studentcount->fetch_assoc();
-                                            $totalstudents = $tpr['total'];
+                                            $conn->select_db("SMIS2"); 
+                                            $result = $conn->query("Select * from student where delete_status='0'");
+                                            $num_rows = $result->num_rows;
                                         ?>
-                                        <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $totalstudents ;?> </h5><hr></div>
+                                        <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $num_rows ;?> </h5><hr></div>
                                         <div>Students</div>
                                     </div>
                                 </div>
@@ -64,13 +62,11 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $conn->query($sql);
-                                            $sql = "SELECT count(id) as total FROM staff where delete_status='0'";
-                                            $staffcount = $conn->query($sql);
-                                            $tpr = $staffcount->fetch_assoc();
-                                            $totalstaff = $tpr['total'];
+                                            $conn->select_db("SMIS2"); 
+                                            $result = $conn->query("Select * from staff where delete_status='0'");
+                                            $num_rows = $result->num_rows;
                                         ?>
-                                        <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $totalstaff ;?> </h5><hr></div>
+                                        <div class="huge"><h5 style="color: white; font-size: 20px"> <?php echo $num_rows ;?> </h5><hr></div>
                                         <div>Total No. of Staff</div>
                                     </div>
                                 </div>
@@ -93,11 +89,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $conn->query($sql);
                                             $sql = "SELECT sum(paid) as totalpaid FROM fees_transaction";
-                                            $tpq = $conn->query($sql);
-                                            $tpr = $tpq->fetch_assoc();
-                                            $totalpaid = $tpr['totalpaid'];
+                                            $result = mysqli_query($conn, $sql);
+                                            while($row = mysqli_fetch_assoc($result)){
+                                               $totalpaid = $row['totalpaid'];
+                                               
+                                            }
                                         ?>
                                         <div class="huge"><h5 style="color: white; font-size: 20px">Ksh. <?php echo $totalpaid ;?></h5><hr></div>
                                         <div>Total Fees Collected</div>
@@ -122,11 +119,12 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <?php
-                                            $conn->query($sql);
                                             $sql = "SELECT sum(balance) as balance FROM student";
-                                            $totalbal = $conn->query($sql);
-                                            $tpr = $totalbal->fetch_assoc();
-                                            $totalbalance = $tpr['balance'];
+                                            $result = mysqli_query($conn, $sql);
+                                            while($row = mysqli_fetch_assoc($result)){
+                                               $totalbalance = $row['balance'];
+                                               
+                                            }
                                         ?>
                                         <div class="huge"><h5 style="color: white; font-size: 20px">Ksh. <?php echo $totalbalance ;?></h5><hr></div>
                                         <div>Total Fee Arrears</div>
