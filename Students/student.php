@@ -423,7 +423,7 @@
 									{
 									
 									echo '<tr '.(($r['balance']>0)?'class="danger"':'').'>
-                                            <td>'.$i.'</td>
+                                            <td>'.$r['id'].'</td>
                                             <td>'.$r['sname'].'<br/>'.$r['contact'].'</td>
                                             <td>'.date("d M y", strtotime($r['joindate'])).'</td>
                                             <td>'.$r['fees'].'</td>
@@ -435,7 +435,7 @@
 											</td>
 											
                                         </tr>';
-										$i++;
+										// $i++;
 									}
 								?>
 									       
