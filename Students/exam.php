@@ -68,7 +68,7 @@ include("../Include/header.php");
                                 </div>
   
                                 <div class="form-group">
-                                    <label for="email"> D.O.J </label>
+                                    <label for="email"> DOJ </label>
                                     <input type="text" class="form-control" id="doj" name="doj" >
                                 </div>
   
@@ -119,7 +119,11 @@ include("../Include/header.php");
                                 of: $(this)
                                 });
                         });
-
+                        setTimeout(function(){
+                            $(".alert").fadeTo(700,0).slideUp(700, function(){
+                                $(this).remove();
+                            });
+                        },2000);
                         /*****************/
 	
                         $('#student').autocomplete({

@@ -186,7 +186,12 @@ include("../Include/header.php")
 					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
 					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 				}
-			} );
+			});
+			setTimeout(function(){
+                $(".alert").fadeTo(700,0).slideUp(700, function(){
+                     $(this).remove();
+                });
+            },2000);
 		} );
 	</script>
 

@@ -243,8 +243,12 @@
 					changeMonth: true,
 					changeYear: true,
 					yearRange: "1970:<?php echo date('Y');?>"
-					});	
-
+				});	
+				setTimeout(function(){
+                    $(".alert").fadeTo(700,0).slideUp(700, function(){
+                        $(this).remove();
+                    });
+                },2000);
 				if($("#signupForm1").length > 0)
 				{
 				

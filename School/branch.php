@@ -251,13 +251,19 @@
                      
 				<script src="../../js/dataTable/jquery.dataTables.min.js"></script>
 				<script>
-				$(document).ready(function () {
-					$('#tSortable22').dataTable({
-						"bPaginate": true,
-						"bLengthChange": false,
-						"bFilter": true,
-						"bInfo": false,
-						"bAutoWidth": true });			
+					$(document).ready(function () {
+						$('#tSortable22').dataTable({
+							"bPaginate": true,
+							"bLengthChange": false,
+							"bFilter": true,
+							"bInfo": false,
+							"bAutoWidth": true 
+						});	
+						setTimeout(function(){
+							$(".alert").fadeTo(700,0).slideUp(700, function(){
+								$(this).remove();
+							});
+						},2000);		
 					});	
 				</script>
 		

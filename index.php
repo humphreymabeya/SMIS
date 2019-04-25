@@ -201,22 +201,6 @@
                 </div>
                 <!-- /. ROW  -->
                 <hr>
-                <div class="row">
-                    <div class="col-md-12">
-                        <fieldset class="scheduler-border">
-                            <legend class="scheduler-border">Generate Lists:</legend>
-                            <form class="form-inline" role="form" id="searchform">
-                                <div class="form-group">
-                                    <label for="email"> Branch: </label>
-                                    <select  class="form-control" id="branch" name="branch" >
-                                        <option value="" >Select Branch</option>
-                                           
-                                    </select>
-                                </div>
-                            </form>
-                        </fieldset>
-                    </div>
-                </div>
                 </div>
             <!-- /. PAGE INNER  -->
         </div>

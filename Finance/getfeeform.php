@@ -79,7 +79,7 @@
                 dateFormat: "yy-mm-dd",
               
             });
-
+            $("#joindate").datepicker("setDate", new Date());
         ///////////////////////////
 
         $( "#signupForm1" ).validate( {

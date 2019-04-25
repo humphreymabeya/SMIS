@@ -256,9 +256,17 @@
 					dateFormat:"yy-mm-dd",
 					changeMonth: true,
 					changeYear: true,
-					yearRange: "1970:<?php echo date('Y');?>"
+					yearRange: "1970:<?php echo date('Y');?>",
+					startDate: '-0d',
 					});	
+				$('#joindate').datepicker("setDate", new Date());
 
+				setTimeout(function(){
+                    $(".alert").fadeTo(700,0).slideUp(700, function(){
+                        $(this).remove();
+                    });
+                },2000);
+				
 				if($("#signupForm1").length > 0)
 				{
 				

@@ -34,7 +34,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="email"> D.O.J </label>
+                                <label for="email"> DOJ </label>
                                 <input type="text" class="form-control" id="doj" name="doj" >
                             </div>
   
